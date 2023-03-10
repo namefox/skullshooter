@@ -24,7 +24,7 @@ public class Game extends JPanel implements ActionListener {
 
         new GameWindow(this);
 
-        Timer timer = new Timer(1000 / 60, this);
+        Timer timer = new Timer(1000 / 120, this);
         timer.start();
     }
 

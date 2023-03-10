@@ -8,13 +8,17 @@ public class Collider extends Component {
 
     public Rectangle bounds;
     public Collider collision;
+    public int offsetX, offsetY;
 
     private boolean replaceBoundsOnEnable;
 
-    public Collider(int width, int height) {
+    public Collider(int width, int height, int offsetX, int offsetY) {
         super("Collider");
 
-        this.bounds = new Rectangle(0, 0, width, height);
+        this.offsetX = offsetX;
+        this.offsetY = offsetY;
+
+        this.bounds = new Rectangle(offsetX, offsetY, width, height);
     }
 
     public Collider() {
@@ -31,6 +35,12 @@ public class Collider extends Component {
 
         PhysicsManager.colliders.add(this);
         super.enable();
+    }
+
+    @Override
+    public void render(Graphics2D g) {
+        g.draw(bounds);
+        super.render(g);
     }
 
     @Override

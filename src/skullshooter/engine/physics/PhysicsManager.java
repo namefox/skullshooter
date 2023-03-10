@@ -13,14 +13,14 @@ public final class PhysicsManager {
     public static void update() {
         for (int i = 0; i < colliders.size(); i++) {
             Collider c = colliders.get(i);
-            c.bounds.x = c.transform.getX();
-            c.bounds.y = c.transform.getY();
+            c.bounds.x = c.transform.getX() + c.offsetX;
+            c.bounds.y = c.transform.getY() + c.offsetY;
 
             //noinspection ForLoopReplaceableByForEach
             for (int j = 0; j < colliders.size(); j++) {
                 Collider b = colliders.get(j);
-                b.bounds.x = b.transform.getX();
-                b.bounds.y = b.transform.getY();
+                b.bounds.x = b.transform.getX() + b.offsetX;
+                b.bounds.y = b.transform.getY() + b.offsetY;
 
                 if (!c.equals(b) && c.bounds.intersects(b.bounds)) {
                     c.collision = b;

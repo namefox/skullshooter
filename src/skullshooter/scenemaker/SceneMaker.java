@@ -88,7 +88,12 @@ public class SceneMaker {
                 String className = input("Class name:", frame);
                 if (className == null) return;
 
-                model.insertNodeInto(new DefaultMutableTreeNode(className), (PropertyNode)path[1], ((PropertyNode) path[1]).getChildCount());
+                String parameter = input("Parameters: ", frame);
+                if (parameter == null) parameter = "";
+
+                parameter = "(" + parameter + ")";
+
+                model.insertNodeInto(new DefaultMutableTreeNode(className + parameter), (PropertyNode)path[1], ((PropertyNode) path[1]).getChildCount());
             }
         });
         sidebar.add(addComponent);
@@ -116,7 +121,7 @@ public class SceneMaker {
                 for (int j = 0; j < node.getChildCount(); j++) {
                     DefaultMutableTreeNode node1 = (DefaultMutableTreeNode) node.getChildAt(j);
 
-                    builder.append("        new ").append(node1.toString()).append("(\"").append(node1).append("\")");
+                    builder.append("        new ").append(node1.toString());
                     if (j < node.getChildCount() - 1)
                         builder.append(",");
                     builder.append("\n");

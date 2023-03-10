@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="scenemaker">
+    <output-path>$PROJECT_DIR$/out/</output-path>
+    <root id="archive" name="scenemaker.jar">
+      <element id="module-output" name="skullshooter" />
+    </root>
+  </artifact>
+</component>
