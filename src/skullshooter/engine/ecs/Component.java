@@ -1,11 +1,11 @@
-package skullshooter.engine;
+package skullshooter.engine.ecs;
 
 import java.awt.*;
 
 public abstract class Component {
 
     protected String name;
-    protected Entity transform;
+    public Entity transform;
 
     public Component(String name) {
         this.name = name;

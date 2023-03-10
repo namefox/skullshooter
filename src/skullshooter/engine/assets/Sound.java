@@ -1,4 +1,4 @@
-package skullshooter.engine;
+package skullshooter.engine.assets;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

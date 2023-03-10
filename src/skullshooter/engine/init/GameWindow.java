@@ -1,4 +1,6 @@
-package skullshooter.engine;
+package skullshooter.engine.init;
+
+import skullshooter.engine.render.Game;
 
 import javax.swing.*;
 

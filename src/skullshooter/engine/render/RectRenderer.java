@@ -1,4 +1,6 @@
-package skullshooter.engine;
+package skullshooter.engine.render;
+
+import skullshooter.engine.ecs.Component;
 
 import java.awt.*;
 
@@ -11,7 +13,6 @@ public class RectRenderer extends Component {
     @Override
     public void update() {
         super.update();
-        transform.setX(transform.getX() + 1);
     }
 
     @Override

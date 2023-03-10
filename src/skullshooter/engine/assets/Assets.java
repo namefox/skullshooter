@@ -1,4 +1,4 @@
-package skullshooter.engine;
+package skullshooter.engine.assets;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

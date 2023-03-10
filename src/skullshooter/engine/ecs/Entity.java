@@ -1,4 +1,6 @@
-package skullshooter.engine;
+package skullshooter.engine.ecs;
+
+import skullshooter.engine.scenes.Scene;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -135,6 +137,15 @@ public class Entity {
             this.components.remove(component);
             component.disable();
         }
+    }
+
+    public Component getComponent(String name) {
+        for (Component component:
+             components) {
+            if (component.name.equals(name)) return component;
+        }
+
+        return null;
     }
 
     @Override

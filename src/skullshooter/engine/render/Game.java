@@ -1,4 +1,8 @@
-package skullshooter.engine;
+package skullshooter.engine.render;
+
+import skullshooter.engine.init.GameWindow;
+import skullshooter.engine.physics.PhysicsManager;
+import skullshooter.engine.scenes.SceneManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +17,7 @@ public class Game extends JPanel implements ActionListener {
     public static final int WIDTH = 1280, HEIGHT = 720;
 
     public Game() {
-        bgColor = new Color(0x111111);
+        bgColor = new Color(0);
 
         setName(TITLE);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -35,6 +39,8 @@ public class Game extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         SceneManager.update();
+        PhysicsManager.update();
+
         repaint();
     }
 }

@@ -1,4 +1,6 @@
-package skullshooter.engine;
+package skullshooter.engine.scenes;
+
+import skullshooter.engine.ecs.Entity;
 
 import java.awt.*;
 import java.util.ArrayList;

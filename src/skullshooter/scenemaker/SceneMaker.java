@@ -1,4 +1,4 @@
-package skullshooter.other.scenemaker;
+package skullshooter.scenemaker;
 
 import javax.swing.*;
 import javax.swing.tree.*;
@@ -95,7 +95,7 @@ public class SceneMaker {
 
         JButton newScene = new JButton("New Scene");
         newScene.addActionListener(e -> {
-            root = new DefaultMutableTreeNode("skullshooter.engine.Scene");
+            root = new DefaultMutableTreeNode("skullshooter.engine.scenes.Scene");
             model = new DefaultTreeModel(root);
             tree.setModel(model);
         });
@@ -139,7 +139,7 @@ public class SceneMaker {
         tree.addTreeSelectionListener(e -> selectedPath = e.getPath());
         mainPane.add(tree);
 
-        root = new DefaultMutableTreeNode("skullshooter.engine.Scene");
+        root = new DefaultMutableTreeNode("skullshooter.engine.scenes.Scene");
         model = new DefaultTreeModel(root);
         tree.setModel(model);
 
