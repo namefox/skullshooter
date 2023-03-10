@@ -1,5 +1,6 @@
 package skullshooter.engine.init;
 
+import skullshooter.engine.input.Input;
 import skullshooter.engine.render.Game;
 
 import javax.swing.*;
@@ -13,6 +14,12 @@ public class GameWindow extends JFrame {
         setMaximumSize(game.getMaximumSize());
         add(game);
         pack();
+
+        Input input = new Input();
+        addKeyListener(input);
+        addMouseListener(input);
+        addMouseMotionListener(input);
+
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
