@@ -21,21 +21,21 @@ public class Main {
 
         SceneManager.init(new Scene(
                 new Entity("Background", 0, 0, 1280, 720,
-                        new SpriteRenderer(Assets.getImage("background.png"))
+                        new SpriteRenderer(Assets.getImage("environment/background.png"))
                 ),
                 new Entity("Player", 100, 100, 100, 100,
-                        new SpriteRenderer(Assets.getImage("skeleton-idle.png")),
-                        new Animation(12, Assets.getImage("skeleton-idle.png"), 32, 32),
+                        new SpriteRenderer(null),
+                        new Animation(12, Assets.getImage("skeleton/idle.png"), 32, 32),
                         new Collider(40, 90, 25, 20),
                         new Gravity(),
                         new Player()
                 ),
                 new Entity("Grass", 0, 620, 1280, 100,
-                        new SpriteRenderer(Assets.getImage("grass.png")),
+                        new SpriteRenderer(Assets.getImage("environment/grass.png")),
                         new Collider()
                 ),
                 new Entity("Vignette", 0, 0, 1280, 720,
-                        new SpriteRenderer(Assets.getImage("vignette.png"))
+                        new SpriteRenderer(Assets.getImage("environment/vignette.png"))
                 )
         ));
 

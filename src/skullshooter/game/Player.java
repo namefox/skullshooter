@@ -36,18 +36,21 @@ public class Player extends Component {
 
         if (Input.getKeyDown(InputCode.LEFT) || Input.getKeyDown(InputCode.A)) {
             transform.setX(transform.getX() - speed);
-            animation.setSpritesheet(Assets.getImage("skeleton-run-2.png"));
+            animation.setSpritesheet(Assets.getImage("skeleton/left/run.png"));
             left = true;
         } else if (Input.getKeyDown(InputCode.RIGHT) || Input.getKeyDown(InputCode.D)) {
             transform.setX(transform.getX() + speed);
-            animation.setSpritesheet(Assets.getImage("skeleton-run.png"));
+            animation.setSpritesheet(Assets.getImage("skeleton/run.png"));
             left = false;
         } else {
-            animation.setSpritesheet(Assets.getImage("skeleton-idle" + (left ? "-2" : "") + ".png"));
+            animation.setSpritesheet(Assets.getImage("skeleton/" + (left ? "left/" : "") + "idle.png"));
         }
 
         if ((Input.getKeyDown(InputCode.UP) || Input.getKeyDown(InputCode.W) || Input.getKeyDown(InputCode.SPACE)) && isGrounded)
             gravity.setVelocity(-speed * 2);
+
+        if (!isGrounded)
+            animation.setSpritesheet(Assets.getImage("skeleton/" + (left ? "left/" : "") + "jump.png"));
 
         if (transform.getY() > 720) SceneManager.load(0);
 
